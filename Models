@@ -1,0 +1,35 @@
+User Model:
+class User 1
+userld?: number; email: string;
+password: string; username: string; mobileNumber: string;
+userRole: string;
+Login Model:
+class Login {
+email: string;
+password: string;
+
+Driver Model:
+interface Driver 1
+driverld?: number; driverName: string; licenseNumber: string;
+experienceYears: number; contactNumber: string;
+availabilityStatus: string; //Initially, should be Active, Value should be "Active", "Inactive", or "On
+Leave" (no other values are allowed)
+address: string;
+vehicleType: string; // e.g., "Sedan", "SUV", "Bike" hourlyRate: number;
+image: string; // Base64-encoded image of the driver
+
+DriverRequest Model: interface DriverRequesti driverRequestld?: number;
+userld: number;
+driverld?: number;
+requestDate: Date; // ISO Date format (YYYY-MM-DD)
+Status: string; // Status of the request; allowed values are "Pending", "Approved", "Rejected", "Trip End", "Closed"
+tripDate: Date; // ISO Date format (YYYY-MM-DD)
+timeSlot: Date; // Time as a Date object (compatible with localTime) pickupLocation: string; dropLocation: string;
+estimatedDuration: string; // e.g., "3 hours" paymentAmount?: number;
+comments?: string; actualDropTime?: Date; actualDuration?: string; actualDropDate?: Date;
+Feedback Model:
+class Feedback {
+feedbackid?: number;
+feedbackText: string;
+date: Date; userld: number;
+driverld?: number; // Optional for non-driver feedback category: string; rating: number;
